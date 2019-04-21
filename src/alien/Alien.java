@@ -32,7 +32,7 @@ public class Alien extends Application {
         
         Scene scene = new Scene(root, 300, 250);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Check out Tirana");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
