@@ -10,15 +10,27 @@ package alien;
  * @author parid
  */
 public class Person {
-    String name;
+     String name;
     String surname; //addition  surname
     int age;
     int arrival_time;
-    String destination.Location;// tha qemali qe se kam ber akoma classen
+    String destination;// tha qemali qe se kam ber akoma classen
     boolean urgent; 
    int leaving_time;
    boolean  luxury_class;
    int ID;// addition ID
+
+    public Person(String name, String surname, int age, int arrival_time, String destination, boolean urgent, int leaving_time, boolean luxury_class, int ID) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.arrival_time = arrival_time;
+        this.destination = destination;
+        this.urgent = urgent;
+        this.leaving_time = leaving_time;
+        this.luxury_class = luxury_class;
+        this.ID = ID;
+    }
 
     public String getName() {
         return name;
@@ -92,6 +104,5 @@ public class Person {
         this.ID = ID;
     }
    
-   
-   
+
 }
