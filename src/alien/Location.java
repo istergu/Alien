@@ -12,14 +12,14 @@ public class Location {
         this.y = y;
         this.distanceFromTR = distanceFromTR;
     }
-
+    
     public String getName() {
         return name;
     }
-
+    
     public void setName(String name) {
         this.name = name;
-    }
+}
 
     public float getX() {
         return x;
