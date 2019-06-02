@@ -6,24 +6,24 @@ public class WeightedGraph {
         int source;
         int destination;
         int time;
-        float distance;
-        Location location; 
+        int distance;
 
-        public Edge(int source, int destination, int time, float distance, Location location) {
+        public Edge(int source, int destination, int time, int distance) {
             this.source = source;
             this.destination = destination;
             this.time = time;
             this.distance = distance;
-            this.location = location;
         }
     }
 
     static class Graph {
         int vertices;
+        Location_Timetravel local[];
         LinkedList<Edge>  adjacencylist[];
 
-        Graph(int vertices) {
-            this.vertices = vertices;
+        Graph(Location_Timetravel local[]) {
+            this.local = local;
+            this.vertices = local.length;
             adjacencylist = new LinkedList[vertices];
             //initialize adjacency lists for all the vertices
             for (int i = 0; i <vertices ; i++) {
@@ -31,21 +31,13 @@ public class WeightedGraph {
             }
         }
 
-        public void addEgde(int source, int destination, int time, float distance, Location loc) {
-            Edge edge = new Edge(source, destination, time, distance, loc);
+        public void addEgde(int source, int destination, int time, int distance) {
+            Edge edge = new Edge(source, destination, time, distance);
             adjacencylist[source].addFirst(edge); //for directed graph
         }
 
         public void printGraph(){
-            int temp;
-            for (int i = 0; i <vertices ; i++) {
-                LinkedList<Edge> list = adjacencylist[i];
-                for (int j = 0; j <list.size() ; j++) {
-                    temp = list.get(j).destination;
-                    System.out.println("vertex-" + i + " Location name: " + list.get(j).location.getName() + " is connected to " +
-                             adjacencylist[temp].get(0).location.getName() + " with time (in minutes) " +  list.get(j).time + " and distance (in kilometers)" + list.get(j).distance);
-                }
-            }
+            
         }
     }
       /*public static void main(String[] args) {

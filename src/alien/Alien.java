@@ -34,16 +34,26 @@ public class Alien extends Application {
 
     public static void main(String[] args) {
         // launch(args);
-        Location tir = new Location("Tirana", 40, 50, 0);
-        Location durr = new Location("Durres", 60, 50, 45);
-        Location elbasan = new Location("Elbasan", 70, 60, 35);
+        int trafic[] = {0,0,0,0,0,0,0,0,0,0,1,1,1,1,2,2,2,1,1,0,0,0,0,0};
+        Location tir = new Location("Tirana", 40, 50);
+        Location durr = new Location("Durres", 60, 50);
+        Location elb = new Location("Elbasan", 70, 60);
+        
+        Location_Timetravel tiran = new Location_Timetravel(tir, trafic);
+        Location_Timetravel durres = new Location_Timetravel(durr, trafic);
+        Location_Timetravel elbasan = new Location_Timetravel(elb, trafic); 
+        
+        Location_Timetravel loc[] = {tiran,durres,elbasan};
+        
         int vertices = 3;
-        WeightedGraph.Graph graph = new WeightedGraph.Graph(vertices);
-        graph.addEgde(0, 1, 30, 45, tir);
-        graph.addEgde(0, 2, 35, 60, tir);
-        graph.addEgde(1, 0, 30, 45, durr);
-        graph.addEgde(2, 0, 35, 60, elbasan);
-        graph.printGraph();
+        WeightedGraph.Graph graph = new WeightedGraph.Graph(loc);
+        graph.addEgde(1, 0, 35, 60);
+        graph.addEgde(1, 2, 50, 80);
+        graph.addEgde(0, 2, 40, 90);
+        
+        Dijkstra djk = new Dijkstra(graph);
+        djk.dijkstra_GetMinDistances(0, vertices);
+        
     }
 
 }

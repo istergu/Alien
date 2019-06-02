@@ -4,13 +4,11 @@ public class Location {
     private String name;
     private float x;
     private float y;
-    private float distanceFromTR;
 
-    public Location(String name, float x, float y, float distanceFromTR) {
+    public Location(String name, float x, float y) {
         this.name = name;
         this.x = x;
         this.y = y;
-        this.distanceFromTR = distanceFromTR;
     }
     
     public String getName() {
@@ -36,14 +34,4 @@ public class Location {
     public void setY(float y) {
         this.y = y;
     }
-
-    public float getDistanceFromTR() {
-        return distanceFromTR;
-    }
-
-    public void setDistanceFromTR(float distanceFromTR) {
-        this.distanceFromTR = distanceFromTR;
-    }
-    
-    
 }

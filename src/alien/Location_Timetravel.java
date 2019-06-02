@@ -1,16 +1,13 @@
 package alien;
 
-import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Location_Timetravel {
     Location location;
-    ArrayList<LocalTime> localtime;
-    ArrayList<Integer> trafic;
+    int trafic[];
 
-    public Location_Timetravel(Location location, ArrayList<LocalTime> localtime, ArrayList<Integer> trafic) {
+    public Location_Timetravel(Location location, int trafic[]) {
         this.location = location;
-        this.localtime = localtime;
         this.trafic = trafic;
     }
 
@@ -22,19 +19,11 @@ public class Location_Timetravel {
         this.location = location;
     }
 
-    public ArrayList<LocalTime> getLocaltime() {
-        return localtime;
-    }
-
-    public void setLocaltime(ArrayList<LocalTime> localtime) {
-        this.localtime = localtime;
-    }
-
-    public ArrayList<Integer> getTrafic() {
+    public int[] getTrafic() {
         return trafic;
     }
 
-    public void setTrafic(ArrayList<Integer> trafic) {
+    public void setTrafic(int[] trafic) {
         this.trafic = trafic;
     }
     
