@@ -5,11 +5,13 @@
  */
 package alien;
 
+import java.io.Serializable;
+
 /**
  *
  * @author parid
  */
-public class Person {
+public class Person implements Serializable {
      String name;
     String surname; //addition  surname
     int age;
