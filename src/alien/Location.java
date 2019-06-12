@@ -1,6 +1,9 @@
 package alien;
 
-public class Location {
+import java.io.Serializable;
+import javafx.beans.property.StringProperty;
+
+public class Location implements Serializable{
     private String name;
     private float x;
     private float y;
@@ -34,4 +37,11 @@ public class Location {
     public void setY(float y) {
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "Location{" + "name=" + name + ", x=" + x + ", y=" + y + '}';
+    }
+    
+    
 }

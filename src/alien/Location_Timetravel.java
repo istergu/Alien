@@ -1,8 +1,8 @@
 package alien;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-public class Location_Timetravel {
+public class Location_Timetravel implements Serializable{
     Location location;
     int trafic[];
 
@@ -25,6 +25,11 @@ public class Location_Timetravel {
 
     public void setTrafic(int[] trafic) {
         this.trafic = trafic;
+    }
+
+    @Override
+    public String toString() {
+        return "Location_Timetravel{" + "location=" + location + ", trafic=" + trafic + '}';
     }
     
     

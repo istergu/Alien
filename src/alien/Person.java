@@ -1,35 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package alien;
 
-/**
- *
- * @author parid
- */
-public class Person {
-     String name;
-    String surname; //addition  surname
+import java.io.Serializable;
+public class Person implements Serializable{
+    String name;
+    String surname; 
     int age;
     int arrival_time;
-    String destination;// tha qemali qe se kam ber akoma classen
+    Location source;
+    Location destination;
     boolean urgent; 
-   int leaving_time;
-   boolean  luxury_class;
-   int ID;// addition ID
 
-    public Person(String name, String surname, int age, int arrival_time, String destination, boolean urgent, int leaving_time, boolean luxury_class, int ID) {
+    public Person(String name, String surname, int age, int arrival_time, Location source, Location destination, boolean urgent) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.arrival_time = arrival_time;
+        this.source = source;
         this.destination = destination;
         this.urgent = urgent;
-        this.leaving_time = leaving_time;
-        this.luxury_class = luxury_class;
-        this.ID = ID;
     }
 
     public String getName() {
@@ -64,11 +52,19 @@ public class Person {
         this.arrival_time = arrival_time;
     }
 
-    public String getDestination() {
+    public Location getSource() {
+        return source;
+    }
+
+    public void setSource(Location source) {
+        this.source = source;
+    }
+
+    public Location getDestination() {
         return destination;
     }
 
-    public void setDestination(String destination) {
+    public void setDestination(Location destination) {
         this.destination = destination;
     }
 
@@ -80,29 +76,11 @@ public class Person {
         this.urgent = urgent;
     }
 
-    public int getLeaving_time() {
-        return leaving_time;
+    @Override
+    public String toString() {
+        return "Person{" + "name=" + name + ", surname=" + surname + ", age=" + age + ", arrival_time=" + arrival_time + ", source=" + source + ", destination=" + destination + ", urgent=" + urgent + '}';
     }
-
-    public void setLeaving_time(int leaving_time) {
-        this.leaving_time = leaving_time;
-    }
-
-    public boolean isLuxury_class() {
-        return luxury_class;
-    }
-
-    public void setLuxury_class(boolean luxury_class) {
-        this.luxury_class = luxury_class;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-   
+    
+    
 
 }
